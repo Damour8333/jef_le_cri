@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff - Musique</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-light text-center py-4">
+        <h1 class="display-4">Jef le Cri</h1>
+        <p class="lead">Musique, poésie et plus encore.</p>
+    </header>
+     <!-- Bandeau avec Image de Fond et Titre -->
+     <header class="banner">
+        <div class="banner-text">
+            <h1>Jef le Cri</h1>
+            <p>Poésie, musique et plus encore.</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Jef le Cri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="poesie.html">Poésie</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="musique.html">Musique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="liens.html">liens </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#evenements">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="mb-4">Musique</h2>
+        <p>Découvrez ma musique et laissez-vous transporter :</p>
+        
+        <div class="row">
+            <!-- Musique 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="picture/IMG_20240912_124644.jpg" class="card-img-top" alt="Musique 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre 1</h5>
+                        <p class="card-text">Un voyage musical inspiré de mes expériences uniques.</p>
+                        <audio controls class="w-100">
+                            <source src="les enfants  1.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas ce lecteur audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Musique 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="picture/IMG_20240912_124644.jpg" class="card-img-top" alt="Musique 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre 2</h5>
+                        <p class="card-text">Un mélange de rythmes et de paroles qui touchent le cœur.</p>
+                        <audio controls class="w-100">
+                            <source src="les enfants  1.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas ce lecteur audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Musique 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/music3.jpg" class="card-img-top" alt="Musique 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre 3</h5>
+                        <p class="card-text">Des sonorités douces pour une ambiance apaisante.</p>
+                        <audio controls class="w-100">
+                            <source src="audios/music3.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas ce lecteur audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Musique 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/music4.jpg" class="card-img-top" alt="Musique 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre 4</h5>
+                        <p class="card-text">Un morceau entraînant qui fait vibrer l’âme.</p>
+                        <audio controls class="w-100">
+                            <source src="audios/music4.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas ce lecteur audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Musique 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/music5.jpg" class="card-img-top" alt="Musique 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Titre 5</h5>
+                        <p class="card-text">Une composition originale pour les passionnés de musique.</p>
+                        <audio controls class="w-100">
+                            <source src="audios/music5.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas ce lecteur audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-3 bg-light">
+        <p>&copy; 2024 Jeff - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

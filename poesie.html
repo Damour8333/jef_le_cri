@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff - Poésie</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+     <!-- Bandeau avec Image de Fond et Titre -->
+     <header class="banner">
+        <div class="banner-text">
+            <h1>Jef le Cri</h1>
+            <p>Poésie, musique et plus encore.</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Jef le Cri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="poesie.html">Poésie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#musique">Musique</a></li>
+                   
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="mb-4">Poésie</h2>
+        <p>Explorez mes poèmes, soigneusement présentés :</p>
+        
+        <div class="row">
+            <!-- Fenêtre Poème 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poème 1</h5>
+                        <p class="card-text text-truncate" style="max-height: 4.5rem; overflow: hidden;">
+                            En suivant la ligne, en suivant la vigne,  
+                            J'atteins le point de mire...
+                        </p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#poem1Modal">Lire plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modale Poème 1 -->
+            <div class="modal fade" id="poem1Modal" tabindex="-1" aria-labelledby="poem1ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="poem1ModalLabel">Poème 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <pre>
+En suivant la ligne, en suivant la vigne,
+J'atteins le point de mire,
+En suivant les barbelés,
+Chemin de terre défoncé,
+Moteur de moto décalé...
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fenêtre Poème 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poème 2</h5>
+                        <p class="card-text text-truncate" style="max-height: 4.5rem; overflow: hidden;">
+                            Les feuilles tombent en silence,  
+                            Murmure de l’automne...
+                        </p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#poem2Modal">Lire plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modale Poème 2 -->
+            <div class="modal fade" id="poem2Modal" tabindex="-1" aria-labelledby="poem2ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="poem2ModalLabel">Poème 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <pre>
+Les feuilles tombent en silence,
+Murmure de l’automne,
+Sur un chemin pavé d’étoiles,
+Je trouve ma lumière intérieure...
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fenêtre Poème 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poème 3</h5>
+                        <p class="card-text text-truncate" style="max-height: 4.5rem; overflow: hidden;">
+                            Sous le ciel gris de l'hiver,  
+                            Mes rêves dansent encore...
+                        </p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#poem3Modal">Lire plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modale Poème 3 -->
+            <div class="modal fade" id="poem3Modal" tabindex="-1" aria-labelledby="poem3ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="poem3ModalLabel">Poème 3</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <pre>
+Sous le ciel gris de l'hiver,
+Mes rêves dansent encore,
+Au bord des rivières gelées,
+Les souvenirs s’effacent doucement...
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-3 bg-light">
+        <p>&copy; 2024 Jeff - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
