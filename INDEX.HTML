@@ -12,39 +12,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Bandeau avec Image de Fond et Titre -->
-    <header class="banner">
-        <div class="banner-text">
-            <h1>Jef le Cri</h1>
-            <p>Poésie, musique et plus encore.</p>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Jef le Cri</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="poesie.html">Poésie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="liens.html">Liens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#evenements">Événements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+    <!-- Bandeau avec Image de Fond et Menu -->
+    <header class="banner position-relative">
+        <div class="container text-center text-white">
+            <!-- Titre -->
+            <div class="banner-text">
+                <h1>Jef le Cri</h1>
+                <p>Poésie, musique et plus encore.</p>
             </div>
         </div>
-    </nav>
+        <!-- Menu intégré dans la bannière -->
+        <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="poesie.html">Poésie</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="liens.html">Liens</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="musique.html">Musique</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Partie Introduction -->
+    <section id="introduction" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Bienvenue dans l'univers de Jef le Cri</h2>
+            <p>
+                Jef le Cri est un voyage à travers la poésie et la musique. Chaque mot, chaque note est un cri du cœur, une invitation à explorer des émotions intenses, des idées profondes et des réflexions personnelles.
+            </p>
+            <p>
+                Explorez mes poèmes, mes créations musicales et découvrez un peu de moi à travers chaque œuvre. Ce site est dédié à ceux qui cherchent à s'évader et à ressentir à travers l'art.
+            </p>
+            <p>
+                Ci-dessous, vous trouverez mes derniers poèmes, mis en forme avec soin pour que vous puissiez vous plonger dans chaque mot et chaque vers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Poésie -->
     <main class="container my-5">
-        <!-- Section Poésie -->
         <section id="poesie">
             <h2 class="mb-4">Poésie</h2>
             <p>Voici mes derniers poèmes, soigneusement mis en page :</p>
             <div class="p-3 bg-light border rounded">
+                <!-- Poème 1 -->
                 <pre>
                     En suivant la ligne, en suivant la vigne,
                     J'atteins le point de mire,
@@ -52,59 +70,32 @@
                     Chemin de terre défoncé,
                     Moteur de moto décalé,
                     Tête en carré, déphasé.
-                    En retournant les jachères,
-                    Terres déser
-                    Tique atomique,
-                    Automne quatre saisons,
-                    Hiver, été, fashion.
-                    Loin du Rhône, de la Garonne,
-                    Dans un bar bazar
-                    De machins barbares,
-                    L'Amérique est là
-                    Devant toi.
+                </pre>
+            </div>
+
+            <!-- Poème 2 -->
+            <div class="p-3 bg-light border rounded mt-4">
+                <pre>
+                    La nuit s'étend, noire comme le sable,
+                    Les rêves s'entrelacent, invisibles et instables,
+                    La lune éclaire les chemins perdus,
+                    L'esprit erre dans l'invisible, suspendu.
+                </pre>
+            </div>
+
+            <!-- Poème 3 -->
+            <div class="p-3 bg-light border rounded mt-4">
+                <pre>
+                    Les échos du silence, des mots jamais dits,
+                    S'éteignent dans l'ombre, là où le vent les fuit.
+                    Mais il reste la trace, dans la mémoire du temps,
+                    Chaque vers écrit, chaque cri résonnant.
                 </pre>
             </div>
         </section>
-
-        <!-- Section Musique -->
-        <section id="musique" class="mt-5">
-            <h2 class="mb-4">Musique</h2>
-            <p>Écoutez ma dernière chanson :</p>
-            <audio controls class="w-100">
-                <source src="les enfants 1.mp3" type="audio/mpeg">
-                Votre navigateur ne supporte pas la lecture audio.
-            </audio>
-        </section>
-
-        <!-- Section Événements -->
-        <section id="evenements" class="mt-5">
-            <h2 class="mb-4">Événements</h2>
-            <ul>
-                <li><strong>Concert :</strong> 29 novembre 2024, Bordeaux le petit grain avec Cuverville</li>
-            </ul>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="mt-5">
-            <h2 class="mb-4">Contact</h2>
-            <form action="submit_form.php" method="post">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nom :</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email :</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message :</label>
-                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-            </form>
-        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="text-center py-3 bg-light">
         <p>&copy; 2024 Jeff - Tous droits réservés.</p>
     </footer>

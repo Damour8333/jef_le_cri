@@ -81,3 +81,25 @@ body {
     margin-top: 0;
     padding: 0;
 }
+
+/* Menu dans la bannière */
+.navbar {
+    bottom: 0; /* Place le menu en bas de la bannière */
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+    }
+}
