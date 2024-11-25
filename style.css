@@ -18,6 +18,23 @@ h1, h2 {
     width: 100%;
     z-index: 10;
     background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-100%); /* Cache complètement la navbar au début */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navbar visible après défilement */
+.navbar.scrolled {
+    transform: translateY(0); /* Navbar visible */
+}
+
+/* Navbar masquée au chargement */
+.navbar.transparent {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Navbar visible */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-nav .nav-link {
@@ -119,68 +136,65 @@ footer {
 /* Affichage du temps */
 .time-display {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
     color: #333;
 }
 
-.custom-audio-player {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Initialement, cacher la navbar */
+.navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 
-.play-pause-btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+/* Afficher la navbar quand on remonte */
+.navbar.visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
 }
 
-.play-pause-btn:hover {
-    background: #0056b3;
+/* Affichage supplémentaire de la navbar quand on a scrollé */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Par exemple, fond semi-transparent */
+    transition: background-color 0.3s ease;
 }
 
-.progress-container {
-    flex: 1;
+/* Carrousel */
+#carrousel {
+    max-width: 1000px; /* Taille maximale du carrousel */
+    margin: 0 auto; /* Centrer le carrousel */
+    padding: 0 20px; /* Ajout d'un peu de marge autour du carrousel */
 }
 
-#progress-bar {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    background: #ddd;
-    border-radius: 5px;
-    appearance: none;
+/* Images du carrousel */
+.carousel-inner img {
+    width: 100%; /* Largeur de l'image à 100% de la zone du carrousel */
+    height: auto; /* Laisser la hauteur se définir automatiquement pour maintenir les proportions */
+    border-radius: 10px; /* Ajouter des bords arrondis à l'image */
+    margin: 0; /* Enlever la marge pour éviter le problème de division */
+    border: 3px solid #ccc; /* Ajouter une bordure autour des photos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce pour l'effet de profondeur */
 }
 
-#progress-bar::-webkit-slider-thumb {
-    appearance: none;
-    width: 10px;
-    height: 10px;
-    background: #007bff;
-    border-radius: 50%;
-    cursor: pointer;
+/* Effet au survol pour l'image centrale */
+.carousel-item.active img {
+    transition: transform 0.2s ease, border-color 0.3s ease;
 }
 
-.time-display {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: #333;
+/* Plus de marges et de style pour les éléments du carrousel */
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Boutons de navigation sombres */
+    border-radius: 50%; /* Rendre les boutons ronds */
+    padding: 10px;
 }
 
+/* Cacher les boutons de navigation sur mobile pour un meilleur design */
+@media (max-width: 768px) {
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+}
 
-
+/* Style pour les boutons Pause et Play */
+.carousel-controls button {
+    margin: 0 10px;
+}
