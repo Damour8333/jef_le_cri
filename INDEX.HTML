@@ -12,33 +12,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Bandeau avec Image de Fond et Menu -->
+    <!-- Menu fixé en haut -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="poesie.html">Poésie</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="liens.html">Liens</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="musique.html">Musique</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bandeau avec Image de Fond -->
     <header class="banner position-relative">
         <div class="container text-center text-white">
-            <!-- Titre -->
             <div class="banner-text">
                 <h1>Jef le Cri</h1>
                 <p>Poésie, musique et plus encore.</p>
             </div>
         </div>
-        <!-- Menu intégré dans la bannière -->
-        <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="poesie.html">Poésie</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="liens.html">Liens</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="musique.html">Musique</a></li>
-                        
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </header>
+
+  
 
     <!-- Partie Introduction -->
     <section id="introduction" class="py-5 bg-light">
@@ -50,50 +50,50 @@
             <p>
                 Explorez mes poèmes, mes créations musicales et découvrez un peu de moi à travers chaque œuvre. Ce site est dédié à ceux qui cherchent à s'évader et à ressentir à travers l'art.
             </p>
-            <p>
-                Ci-dessous, vous trouverez mes derniers poèmes, mis en forme avec soin pour que vous puissiez vous plonger dans chaque mot et chaque vers.
-            </p>
         </div>
     </section>
 
-    <!-- Section Poésie -->
-    <main class="container my-5">
-        <section id="poesie">
-            <h2 class="mb-4">Poésie</h2>
-            <p>Voici mes derniers poèmes, soigneusement mis en page :</p>
-            <div class="p-3 bg-light border rounded">
-                <!-- Poème 1 -->
-                <pre>
-                    En suivant la ligne, en suivant la vigne,
-                    J'atteins le point de mire,
-                    En suivant les barbelés,
-                    Chemin de terre défoncé,
-                    Moteur de moto décalé,
-                    Tête en carré, déphasé.
-                </pre>
+      <!-- Lecteur Audio -->
+      <section class="audio-player text-center py-4">
+        <div class="container">
+            <div class="custom-audio-player">
+                <audio id="audio-player" preload="metadata">
+                    <source src="les_enfants_1.mp3" type="audio/mp3">
+                    Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+                <div class="controls">
+                    <button id="play-pause" class="play-pause-btn">▶</button>
+                    <div class="progress-container">
+                        <input id="progress-bar" type="range" min="0" max="100" value="0">
+                    </div>
+                    <span id="current-time" class="time-display">0:00</span> / 
+                    <span id="duration" class="time-display">0:00</span>
+                </div>
             </div>
+        </div>
+    </section>
+    
 
-            <!-- Poème 2 -->
-            <div class="p-3 bg-light border rounded mt-4">
-                <pre>
-                    La nuit s'étend, noire comme le sable,
-                    Les rêves s'entrelacent, invisibles et instables,
-                    La lune éclaire les chemins perdus,
-                    L'esprit erre dans l'invisible, suspendu.
-                </pre>
+    <!-- Carte Poésie -->
+    <section id="poesie-card" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Découvrez un poème</h2>
+            <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Les Échos du Silence</h5>
+                    <p class="card-text">
+                        Les échos du silence, des mots jamais dits,  
+                        S'éteignent dans l'ombre, là où le vent les fuit.  
+                        Mais il reste la trace, dans la mémoire du temps,  
+                        Chaque vers écrit, chaque cri résonnant.
+                    </p>
+                    <div class="text-center">
+                        <a href="poesie.html" class="btn btn-primary">Lire d'autres poèmes</a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Poème 3 -->
-            <div class="p-3 bg-light border rounded mt-4">
-                <pre>
-                    Les échos du silence, des mots jamais dits,
-                    S'éteignent dans l'ombre, là où le vent les fuit.
-                    Mais il reste la trace, dans la mémoire du temps,
-                    Chaque vers écrit, chaque cri résonnant.
-                </pre>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="text-center py-3 bg-light">
@@ -102,5 +102,7 @@
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
