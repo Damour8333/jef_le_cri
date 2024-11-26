@@ -37,40 +37,46 @@
             </div>
         </div>
     </header>
-
-    <!-- Partie Introduction -->
-    <section id="introduction" class="py-5 bg-light">
-        <div class="container text-center">  
-            <h2 class="mb-4">Bienvenue dans l'univers de Jef le Cri</h2>
-            <p>
-                Jef le Cri est un voyage à travers la poésie et la musique. Chaque mot, chaque note est un cri du cœur, une invitation à explorer des émotions intenses, des idées profondes et des réflexions personnelles.
-            </p>
-            <p>
-                Explorez mes poèmes, mes créations musicales et découvrez un peu de moi à travers chaque œuvre. Ce site est dédié à ceux qui cherchent à s'évader et à ressentir à travers l'art.
-            </p>
-        </div>
-    </section>
-
-    <!-- Lecteur Audio -->
-    <section class="audio-player text-center py-4">
-        <div class="container">
-            <div class="custom-audio-player">
-                <audio id="audio-player" preload="metadata">
-                    <source src="les_enfants_1.mp3" type="audio/mp3">
-                    Votre navigateur ne supporte pas l'élément audio.
-                </audio>
-                <div class="controls">
-                    <button id="play-pause" class="play-pause-btn">▶</button>
-                    <div class="progress-container">
-                        <input id="progress-bar" type="range" min="0" max="100" value="0">
+    <section>
+        <!-- Partie Introduction -->
+        <section id="introduction" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2 class="mb-4">Bienvenue dans l'univers de Jef le Cri</h2>
+                <p>
+                    Jef le Cri est un voyage à travers la poésie et la musique. Chaque mot, chaque note est un cri du cœur, une invitation à explorer des émotions intenses, des idées profondes et des réflexions personnelles.
+                </p>
+                <p>
+                    Explorez mes poèmes, mes créations musicales et découvrez un peu de moi à travers chaque œuvre. Ce site est dédié à ceux qui cherchent à s'évader et à ressentir à travers l'art.
+                </p>
+            </div>
+            <!-- Ajouter une classe au conteneur principal pour appliquer le fond -->
+            <div class="background-image"></div>
+        </section>
+    
+        <!-- Lecteur Audio -->
+        <section class="audio-player text-center py-4">
+            <div class="container">
+                <div class="custom-audio-player">
+                    <audio id="audio-player" preload="metadata">
+                        <source src="music/le banjo mastering ville défigurée - 10_10_2023 14.14.mp3" type="audio/mp3">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                    <div class="controls">
+                        <button id="play-pause" class="play-pause-btn">▶</button>
+                        <div class="progress-container">
+                            <input id="progress-bar" type="range" min="0" max="100" value="0">
+                        </div>
+                        <span id="current-time" class="time-display">0:00</span> /
+                        <span id="duration" class="time-display">0:00</span>
                     </div>
-                    <span id="current-time" class="time-display">0:00</span> / 
-                    <span id="duration" class="time-display">0:00</span>
                 </div>
             </div>
-        </div>
+        </section>
     </section>
+    
+   
 
+    
     <!-- Carte Poésie -->
     <section id="poesie-card" class="py-5">
         <div class="container">

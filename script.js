@@ -202,6 +202,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener('scroll', () => {
+    const fullPhoto = document.getElementById('full-photo');
+    const nameAnimation = document.getElementById('name-animation');
+    const contactForm = document.getElementById('contact-form');
+    const threshold = fullPhoto.offsetHeight / 2;
+
+    if (window.scrollY > threshold) {
+        nameAnimation.style.display = 'none';
+        contactForm.style.opacity = 1;
+        contactForm.style.transform = 'translateY(0)';
+    } else {
+        nameAnimation.style.display = 'block';
+        contactForm.style.opacity = 0;
+        contactForm.style.transform = 'translateY(50px)';
+    }
+});
+
+
 
 
 
