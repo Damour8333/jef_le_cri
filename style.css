@@ -27,7 +27,7 @@ h1, h2 {
 
 /* Style de la bannière */
 .banner {
-    background-image: url('picture/IMG_20240912_124644.jpg'); /* Remplacez par le chemin de votre image */
+    background-image: url('picture/jef10.jpg'); /* Remplacez par le chemin de votre image */
     background-attachment: fixed; /* Image mobile au défilement */
     background-size: cover;
     background-position: center;
@@ -199,3 +199,13 @@ footer {
 }
 
 
+section h2 {
+    font-size: 2.5rem;
+    color: #222;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
