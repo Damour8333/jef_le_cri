@@ -1,3 +1,26 @@
+<?php
+// Connexion à la base de données
+$host = 'localhost'; 
+$user = 'root'; 
+$password = ''; 
+$database = 'cms_jeff'; 
+
+$conn = new mysqli($host, $user, $password, $database);
+
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+
+// Récupérer les musiques
+$stmt_musique = $conn->query("SELECT * FROM `musique`");
+if (!$stmt_musique) {
+    die("Erreur lors de la récupération des musiques : " . $conn->error);
+}
+$musique = $stmt_musique->fetch_all(MYSQLI_ASSOC);
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,95 +35,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Bandeau avec image et menu intégré -->
+    <!-- Menu fixé en haut -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="poesie.php">Poésie</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="liens.php">Liens</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="musique.php">Musique</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Bandeau avec Image de Fond -->
     <header class="banner position-relative">
         <div class="container text-center text-white">
-            <!-- Texte principal -->
             <div class="banner-text">
                 <h1>Musique</h1>
                 <p>Des mélodies qui touchent l'âme et racontent une histoire.</p>
             </div>
         </div>
-        <!-- Menu intégré dans la bannière -->
-        <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="poesie.html">Poésie</a></li>
-                        <li class="nav-item"><a class="nav-link text-white active" href="musique.html">Musique</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="liens.html">Liens</a></li>
-                        
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </header>
 
     <!-- Contenu principal -->
     <main class="container my-5">
-        <h2 class="mb-4 text-center">Découvrez ma musique</h2>
+        <h2 class="text-center mb-4">Découvrez ma musique</h2>
         <p class="text-center">Plongez dans un univers sonore unique, où chaque morceau raconte une histoire.</p>
-        
+
         <div class="row">
-            <!-- Musique 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="picture/IMG_20240912_124644.jpg" class="card-img-top" alt="Musique 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Le scaphandrier</h5>
-                        <p class="card-text">Un voyage musical inspiré de mes expériences uniques.</p>
-                        <audio controls class="w-100">
-                            <source src="music/le scaphandrier mastering ville défigurée - 10_10_2023 14.41.mp3" type="audio/mpeg">
-                            Votre navigateur ne supporte pas ce lecteur audio.
-                        </audio>
+            <?php foreach ($musique as $track): ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="/site_jef/picture/jef-1.jpg" class="card-img-top" alt="<?php echo htmlspecialchars($track['titre']); ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($track['titre']); ?></h5>
+                            <audio controls class="w-100">
+                                <source src="http://localhost/site_jef/<?php echo htmlspecialchars($track['fichier_audio']); ?>" type="audio/mpeg">
+                                Votre navigateur ne supporte pas ce lecteur audio.
+                            </audio>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Musique 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="picture/jef 5.jpg" class="card-img-top" alt="Musique 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Céleste</h5>
-                        <p class="card-text">Un mélange de rythmes et de paroles qui touchent le cœur.</p>
-                        <audio controls class="w-100">
-                            <source src="music/Céleste mastering ville défigurée - 10_10_2023 14.19.mp3" type="audio/mpeg">
-                            Votre navigateur ne supporte pas ce lecteur audio.
-                        </audio>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Musique 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="picture/jef1.jpg" class="card-img-top" alt="Musique 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Les mots </h5>
-                        <p class="card-text">Des sonorités douces pour une ambiance apaisante.</p>
-                        <audio controls class="w-100">
-                            <source src="music/les mots mastering ville défigurée - 10_10_2023 14.29.mp3" type="audio/mpeg">
-                            Votre navigateur ne supporte pas ce lecteur audio.
-                        </audio>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </main>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer class="text-center py-3 bg-light">
         <p>&copy; 2024 Jeff - Tous droits réservés.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
