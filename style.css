@@ -24,10 +24,19 @@ h1, h2 {
     color: white !important;
     font-weight: bold;
 }
-
+ /* Effet d'animation de l'apparition */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 /* Style de la bannière */
 .banner {
-    background-image: url('picture/jef10.jpg'); /* Remplacez par le chemin de votre image */
+    background-image: url('picture/jef-10.jpg'); /* Remplacez par le chemin de votre image */
     background-attachment: fixed; /* Image mobile au défilement */
     background-size: cover;
     background-position: center;
