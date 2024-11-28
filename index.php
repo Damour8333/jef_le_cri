@@ -94,9 +94,8 @@ $conn->close();
         <div class="container">
             <?php foreach ($musique as $track): ?>
                 <div class="custom-audio-player">
-                    <!-- Contrôle de l'audio avec le chemin dynamique -->
-                    <audio controls>
-                        <source src="http://localhost<?php echo htmlspecialchars($track['fichier_audio']); ?>" type="audio/mp3">
+                    <audio id="audio-player" preload="metadata" controls>
+                        <source src="<?php echo '/site_jef' . htmlspecialchars($track['fichier_audio']); ?>" type="audio/mp3">
                         Votre navigateur ne supporte pas l'élément audio.
                     </audio>
                     <p><?php echo htmlspecialchars($track['titre']); ?></p>
