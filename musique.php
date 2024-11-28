@@ -33,24 +33,37 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Animation CSS -->
+    <style>
+        /* Effet d'animation de l'apparition */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <!-- Menu fixé en haut -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.php">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="poesie.php">Poésie</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="musique.php">Musique</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="liens.php">Liens</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="musique.php">Musique</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
 
     <!-- Bandeau avec Image de Fond -->
     <header class="banner position-relative">
@@ -69,7 +82,7 @@ $conn->close();
 
         <div class="row">
             <?php foreach ($musique as $track): ?>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 fade-in">
                     <div class="card shadow-sm">
                         <img src="/site_jef/picture/jef-1.jpg" class="card-img-top" alt="<?php echo htmlspecialchars($track['titre']); ?>">
                         <div class="card-body">
@@ -92,5 +105,28 @@ $conn->close();
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript pour l'animation de défilement -->
+    <script>
+        // Utilisation de l'Intersection Observer pour détecter quand un élément entre dans la fenêtre
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            threshold: 0.3 // L'élément doit être visible à 30% pour être déclenché
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>

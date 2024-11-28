@@ -5,7 +5,7 @@ $username = "root"; // Remplace par ton utilisateur MySQL
 $password = ""; // Remplace par ton mot de passe
 $dbname = "cms_jeff"; // Nom de ta base de données
 
-// Connexion à MySQL
+// Connexion à MySQL avec gestion des erreurs
 $conn = new mysqli($host, $username, $password, $dbname);
 
 // Vérifier la connexion
@@ -26,6 +26,12 @@ if ($conn->connect_error) {
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar {
+            z-index: 1000;
+        }
+       
+    </style>
 </head>
 <body>
     <!-- Bandeau avec Image de Fond et Menu -->
@@ -36,7 +42,7 @@ if ($conn->connect_error) {
                 <p>Un voyage à travers les mots.</p>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top w-100">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -59,22 +65,32 @@ if ($conn->connect_error) {
         <section id="poesie">
             <h2 class="mb-4">Mes Poèmes</h2>
             <?php
-            // Requête pour récupérer tous les poèmes
-            $sql = "SELECT id, title, content, created_at FROM poems";
-            $result = $conn->query($sql);
+            // Requête préparée pour récupérer tous les poèmes
+            $stmt = $conn->prepare("SELECT id, title, content, created_at FROM poems ORDER BY created_at DESC");
 
-            // Vérifie s'il y a des résultats
-            if ($result->num_rows > 0) {
-                // Afficher chaque poème
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='poem mb-5'>";
-                    echo "<h5>" . htmlspecialchars($row['title']) . "</h5>";
-                    echo "<pre>" . nl2br(htmlspecialchars($row['content'])) . "</pre>";
-                    echo "<p class='text-muted'>Publié le " . htmlspecialchars($row['created_at']) . "</p>";
-                    echo "</div>";
+            // Vérifie si la préparation a réussi
+            if ($stmt) {
+                $stmt->execute(); // Execution de la requête préparée
+                $result = $stmt->get_result(); // Récupération du résultat
+
+                // Vérifie s'il y a des résultats
+                if ($result->num_rows > 0) {
+                    // Afficher chaque poème
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='poem mb-5'>";
+                        echo "<h5>" . htmlspecialchars($row['title']) . "</h5>";
+                        echo "<pre>" . nl2br(htmlspecialchars($row['content'])) . "</pre>";
+                        echo "<p class='text-muted'>Publié le " . htmlspecialchars($row['created_at']) . "</p>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>Aucun poème n'est encore disponible.</p>";
                 }
+
+                // Fermer la requête préparée
+                $stmt->close();
             } else {
-                echo "<p>Aucun poème n'est encore disponible.</p>";
+                echo "<p>Une erreur est survenue lors de la récupération des poèmes.</p>";
             }
             ?>
         </section>
