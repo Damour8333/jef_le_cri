@@ -13,7 +13,7 @@ Il semble qu'il y ait une petite erreur dans les commandes que tu as utilisées.
 2. **Commande pour pousser les changements** :  
    La branche principale est souvent nommée `main` (et non `mai`). La commande corrigée est :
    ```bash
-   git push -u origin main
+   git push -u origin php
    ```
 
 ---
@@ -155,3 +155,67 @@ http://localhost/contact.php
 ``` 
 
 Vous êtes maintenant prêt à voir votre page `poesie.php` dans votre navigateur ! 😊
+
+
+
+Si tu veux basculer vers une branche appelée `php` avec la commande :
+
+```bash
+git checkout php
+```
+
+Voici ce qui peut se passer et les étapes pour que tout se déroule correctement :
+
+---
+
+### **1. Vérification de la branche `php`**
+Si la branche `php` existe déjà dans ton dépôt, Git changera simplement de branche. Tu verras un message comme :
+
+```
+Switched to branch 'php'
+```
+
+Si tu souhaites vérifier que la branche existe avant de la rejoindre, utilise :
+```bash
+git branch
+```
+Cela affichera toutes les branches locales disponibles.
+
+---
+
+### **2. Si la branche `php` n'existe pas encore**
+Si la branche n'existe pas, Git te dira quelque chose comme :
+```
+error: pathspec 'php' did not match any file(s) known to git
+```
+Dans ce cas, tu dois créer la branche avant de la rejoindre. Voici comment faire :
+
+#### **Créer la branche `php` et y basculer :**
+```bash
+git checkout -b php
+```
+- Cela crée une nouvelle branche appelée `php` et bascule immédiatement dessus.
+- Tu verras un message comme :
+  ```
+  Switched to a new branch 'php'
+  ```
+
+---
+
+### **3. Pousser la branche vers le dépôt distant (optionnel)**
+Si tu souhaites que la branche soit également disponible sur le dépôt distant (par exemple sur GitHub), pousse-la avec :
+```bash
+git push -u origin php
+```
+Cela rendra la branche `php` disponible sur le serveur distant, et Git configurera cette branche pour suivre les mises à jour du dépôt distant.
+
+---
+
+### **4. Vérification finale**
+Après avoir changé de branche, tu peux vérifier ton statut avec :
+```bash
+git status
+```
+Cela te confirmera que tu es sur la branche `php` et que tes modifications locales (si elles existent) sont prêtes à être intégrées ou commitées.
+
+Si tu rencontres un problème à cette étape, fais-moi savoir ! 😊

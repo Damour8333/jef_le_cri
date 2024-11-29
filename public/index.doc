@@ -105,12 +105,14 @@ $conn->close();
     </section>
 
     <!-- Carrousel -->
-    <section id="carrousel" class="my-5">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+     <div class="d-flex flex-column vh-100">
+        <div class="flex-grow-1">
+        <section id="carrousel"   class="my-5">
+        <div id="carouselExample"    class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php foreach ($images_carrousel as $index => $image): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <img src="<?php echo htmlspecialchars($image['image_path']); ?>" class="d-block w-100" alt="Image du carrousel">
+                        <img src="<?php echo htmlspecialchars($image['image_path']); ?>" class="d-block w-50" alt="Image du carrousel">
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -124,6 +126,10 @@ $conn->close();
             </button>
         </div>
     </section>
+        </div>
+
+     </div> 
+    
 
     <!-- Footer -->
     <footer class="text-center py-3 bg-light">

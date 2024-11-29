@@ -53,7 +53,7 @@ if ($conn->connect_error) {
                         <li class="nav-item"><a class="nav-link text-white active" href="poesie.php">Poésie</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="liens.php">Liens</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="musique.php">Musique</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                        
                     </ul>
                 </div>
             </div>
