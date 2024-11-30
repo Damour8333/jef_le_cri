@@ -55,3 +55,29 @@ document.addEventListener("DOMContentLoaded", () => {
         pauseBtn.style.display = 'inline-block'; // Affiche le bouton de pause
     });
 });
+
+// Utilisation de l'Intersection Observer pour ajouter des animations au défilement
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observerOptions = {
+    threshold: 0.3
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+fadeElements.forEach(element => {
+    observer.observe(element);
+});
+// Example of simple interactivity (can be expanded as needed)
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("Site chargé et prêt!");
+});
+
+
